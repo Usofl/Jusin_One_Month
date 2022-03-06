@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\users\github\jusin_one_month\jusin_one_month\220217\main.cpp(9): warning C4101: 'iTemp' :참조되지 않은 지역 변수입니다.
+d:\users\github\jusin_one_month\jusin_one_month\220217\main.cpp(29): warning C4101: 'bChoice' :참조되지 않은 지역 변수입니다.
+  Grade.cpp
+  코드를 생성하고 있습니다...
+main.obj : error LNK2005: _main이(가) Grade.obj에 이미 정의되어 있습니다.
+D:\Users\GitHub\Jusin_One_Month\Jusin_One_Month\Debug\220217.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
