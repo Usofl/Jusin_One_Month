@@ -12,6 +12,7 @@ int getSum(int iArray[]);
 double getAvg(int iSum);
 void PrintStudent(char(*cArray)[iNameCount], int(*iArray)[iGradeCount], int iStudent);
 void SearchStudent(char(*cArray)[iNameCount], int(*iArray)[iGradeCount], char* cName);
+int GetTextLen(char* pText);
 
 void main()
 {
@@ -119,20 +120,50 @@ void PrintStudent(char(*cArray)[iNameCount], int(*iArray)[iGradeCount], int iStu
 
 void SearchStudent(char(*cArray)[iNameCount], int(*iArray)[iGradeCount], char* cName)
 {
-	int iIndex = 0;
+	int iIndex = -1;
+
 	for (int i = 0; i < iStudentCount; ++i)
 	{
-		if (cArray[i] == cName)
+		for (int j = 0; cArray[i][j] != '\0' && cName[j] != '\0'; ++j)
 		{
-			iIndex = i;
+			if (GetTextLen(cArray[i]) == GetTextLen(cName))
+			{
+				if (cArray[i][j] == cName[j])
+				{
+					iIndex = i;
+				}
+				else
+				{
+					iIndex = -1;
+				}
+			}
 		}
 	}
 
-	cout << "이름 : " << cArray[iIndex] << endl;
-	cout << "국어 : " << iArray[iIndex][0] << endl;
-	cout << "영어 : " << iArray[iIndex][1] << endl;
-	cout << "수학 : " << iArray[iIndex][2] << endl;
-	cout << "총점 : " << getSum(iArray[iIndex]) << endl;
-	cout << "평균 : " << getAvg(getSum(iArray[iIndex])) << endl;
-	cout << "============================================" << endl;
+	if (iIndex != -1)
+	{
+		cout << "이름 : " << cArray[iIndex] << endl;
+		cout << "국어 : " << iArray[iIndex][0] << endl;
+		cout << "영어 : " << iArray[iIndex][1] << endl;
+		cout << "수학 : " << iArray[iIndex][2] << endl;
+		cout << "총점 : " << getSum(iArray[iIndex]) << endl;
+		cout << "평균 : " << getAvg(getSum(iArray[iIndex])) << endl;
+		cout << "============================================" << endl;
+	}
+	else
+	{
+		cout << "검색한 학생이 없습니다." << endl;
+	}
+}
+
+int GetTextLen(char* pText)
+{
+	int iLen = 0;
+
+	for (int i = 0; '\0' != pText[i]; ++i)
+	{
+		iLen++;
+	}
+
+	return iLen;
 }
