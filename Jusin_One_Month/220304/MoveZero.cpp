@@ -5,11 +5,8 @@ using namespace std;
 const int iSize = 5;
 
 void InitArray(int(*iArray)[iSize]); // 배열을 채워주는 함수
-
 void PrintArray(int(*iArray)[iSize]);
-
 void Swap(int* _iA, int* _iB);
-
 void Moving(int iChoice, int(*iArray)[iSize], int* iX, int* iY);
 
 void main()

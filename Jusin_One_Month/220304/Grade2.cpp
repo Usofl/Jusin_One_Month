@@ -32,7 +32,7 @@ void main()
 
 		if (1 == iChoice)
 		{
-			if (iInputStudent < 3)
+			if (iInputStudent < iStudentCount)
 			{
 				InputStudent(cStudentArray[iInputStudent], iGradeArray[iInputStudent]);
 				iInputStudent++;
