@@ -9,7 +9,7 @@ const int iGradeCount = 3;
 struct Student
 {
 	char cName[iNameCount];
-	int iKuk = 0, iEng = 0, iMath = 0;
+	int iKuk, iEng, iMath;
 };
 
 void Menu();
@@ -115,6 +115,7 @@ void PrintStudent(Student stdArray[], int* iStdCount)
 void SearchStudent(Student stdArray[], int* iStdCount)
 {
 	char cSearchName[iNameCount] = {};
+	int iCount = 0;
 	cout << "검색할 학생의 이름을 입력하시오." << endl;
 	cin >> cSearchName;
 
@@ -132,7 +133,7 @@ void SearchStudent(Student stdArray[], int* iStdCount)
 			cout << "평균 : " << getAvg(std) << endl;
 			cout << "============================================" << endl;
 		}
-		else if (i == *iStdCount - 1)
+		else if (i == *iStdCount - 1 && iCount == 0)
 		{
 			cout << "검색한 학생이 없습니다." << endl;
 		}
