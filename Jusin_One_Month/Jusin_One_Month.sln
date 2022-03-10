@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FindHair", "FindHair\FindHa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "220308", "220308\220308.vcxproj", "{0F0A9AE1-BC55-4682-93F7-977E306CF12C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "220310", "220310\220310.vcxproj", "{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{0F0A9AE1-BC55-4682-93F7-977E306CF12C}.Release|x64.Build.0 = Release|x64
 		{0F0A9AE1-BC55-4682-93F7-977E306CF12C}.Release|x86.ActiveCfg = Release|Win32
 		{0F0A9AE1-BC55-4682-93F7-977E306CF12C}.Release|x86.Build.0 = Release|Win32
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Debug|x64.ActiveCfg = Debug|x64
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Debug|x64.Build.0 = Debug|x64
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Debug|x86.ActiveCfg = Debug|Win32
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Debug|x86.Build.0 = Debug|Win32
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Release|x64.ActiveCfg = Release|x64
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Release|x64.Build.0 = Release|x64
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Release|x86.ActiveCfg = Release|Win32
+		{CBD78BA3-2339-4E23-95C7-2AFB0F19782A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
