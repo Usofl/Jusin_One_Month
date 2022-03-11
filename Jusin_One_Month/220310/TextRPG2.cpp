@@ -20,6 +20,7 @@ struct Monster
 	int iMonster_Max_HP;
 };
 
+int RandomNum(int MaxNum);
 void Menu();
 void MakePlayer(Player* player);
 Monster* MakeMonster(int iLevel);
@@ -79,6 +80,7 @@ void MakePlayer(Player* player)
 		player->cNickName = "µµÀû";
 		player->iPlayer_AttakPoint = 50;
 		player->iPlayer_Max_HP = 150;
+		player->iPlayer_Lest_HP = player->iPlayer_Max_HP;
 		break;
 
 	case 4:
