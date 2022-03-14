@@ -8,11 +8,11 @@ void main()
 	FILE* Image_File = nullptr;
 	FILE* Image_Copy_File = nullptr;
 
-	char* readImage = "";
+	char readImage = 0;
 	int Count = 0;
 
 	errno_t err = fopen_s(&Image_File, "./Data/Image.jpg", "rb");
-	errno_t errcpy = fopen_s(&Image_File, "./Data/ImageCopy.jpg", "wb");
+	errno_t errcpy = fopen_s(&Image_Copy_File, "./Data/ImageCopy.jpg", "wb");
 
 	if (0 == err && 0 == errcpy)
 	{
@@ -20,10 +20,8 @@ void main()
 
 		while(!feof(Image_File))
 		{
-			fwrite(Image_Copy_File, 1, 1,ftell(Image_File));
-
-			fseek(Image_File, 1, SEEK_SET);
-
+			fread(&readImage, 1, 1, Image_File);
+			fwrite(&readImage, 1, 1, Image_Copy_File);
 		}
 
 		fclose(Image_File);
