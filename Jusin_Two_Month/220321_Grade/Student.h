@@ -13,5 +13,5 @@ public:
 
 	void Set_Student_Name(char* _cName);
 
-	char* Get_Student_Name();
+	const char* Get_Student_Name();
 };

@@ -37,7 +37,7 @@ void CStudent::Set_Student_Name(char * _cName)
 	strcpy_s(m_cName, sizeof(m_cName), _cName);
 }
 
-char * CStudent::Get_Student_Name()
+const char * CStudent::Get_Student_Name()
 {
 	return m_cName;
 }

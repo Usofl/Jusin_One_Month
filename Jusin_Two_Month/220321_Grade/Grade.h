@@ -14,9 +14,9 @@ public:
 	void Set_Eng(int _iEng);
 	void Set_Math(int _iMath);
 
-	int Get_Kuk();
-	int Get_Eng();
-	int Get_Math();
-	int Get_Sum();
-	double Get_Avg();
+	const int Get_Kuk();
+	const int Get_Eng();
+	const int Get_Math();
+	const int Get_Sum();
+	const double Get_Avg();
 };

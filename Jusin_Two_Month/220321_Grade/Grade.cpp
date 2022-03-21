@@ -25,27 +25,27 @@ void CGrade::Set_Math(int _iMath)
 	m_iMath = _iMath;
 }
 
-int CGrade::Get_Kuk()
+const int CGrade::Get_Kuk()
 {
 	return m_iKuk;
 }
 
-int CGrade::Get_Eng()
+const int CGrade::Get_Eng()
 {
 	return m_iEng;
 }
 
-int CGrade::Get_Math()
+const int CGrade::Get_Math()
 {
 	return m_iMath;
 }
 
-int CGrade::Get_Sum()
+const int CGrade::Get_Sum()
 {
 	return m_iKuk + m_iEng + m_iMath;
 }
 
-double CGrade::Get_Avg()
+const double CGrade::Get_Avg()
 {
 	double dAvg = Get_Sum() / 3.0;
 
