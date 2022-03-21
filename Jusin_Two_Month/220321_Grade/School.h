@@ -7,7 +7,7 @@ private:
 	CStudent* m_student = nullptr;
 	size_t m_Student_Size = 0;
 public:
-	int Menu();
+	bool Menu();
 
 	void Init_Student();
 	void Add_Student();

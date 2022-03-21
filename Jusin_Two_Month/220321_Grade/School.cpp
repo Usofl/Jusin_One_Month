@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "School.h"
 
-int CSchool::Menu()
+bool CSchool::Menu()
 {
 	if (m_student == nullptr)
 	{
@@ -31,6 +31,7 @@ int CSchool::Menu()
 		break;
 	
 	case 4:
+		Delete_Student();
 		return false;
 		break;
 	

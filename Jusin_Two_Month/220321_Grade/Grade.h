@@ -17,6 +17,7 @@ public:
 	const int Get_Kuk();
 	const int Get_Eng();
 	const int Get_Math();
+
 	const int Get_Sum();
 	const double Get_Avg();
 };

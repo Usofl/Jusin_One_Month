@@ -3,9 +3,9 @@
 
 void CGrade::Print_Grade()
 {
-	cout << "국어 : " << m_iKuk << endl;
-	cout << "영어 : " << m_iEng << endl;
-	cout << "수학 : " << m_iMath << endl;
+	cout << "국어 : " << Get_Kuk() << endl;
+	cout << "영어 : " << Get_Eng() << endl;
+	cout << "수학 : " << Get_Math() << endl;
 	cout << "총합 : " << Get_Sum() << endl;
 	cout << "평균 : " << Get_Avg() << endl;
 }
