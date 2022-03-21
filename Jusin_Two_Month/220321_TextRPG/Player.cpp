@@ -12,25 +12,42 @@ bool CPlayer::Init_Player()
 
 	system("cls");
 
-	cout << "닉네임을 입력하세요(1~9자) : ";
-	cin >> cNickName;
-
-	strcpy_s(m_NickName, sizeof(m_NickName), cNickName);
-
 	switch (iChoice)
 	{
 	case 1:
-		strcpy_s(m_Class, sizeof(m_Class), "전사");
+		cout << "닉네임을 입력하세요(1~9자) : ";
+		cin >> cNickName;
+
+		Set_Nick_Name(cNickName);
+		Set_Class("전사");
+
 		Set_Attack_Point(10);
 		Set_Max_HP(200);
+		Set_Lest_HP(Get_Max_HP());
 		break;
 
 	case 2:
-		strcpy_s(m_Class, sizeof(m_Class), "마법사");
+		cout << "닉네임을 입력하세요(1~9자) : ";
+		cin >> cNickName;
+
+		Set_Nick_Name(cNickName);
+		Set_Class("마법사");
+
+		Set_Attack_Point(50);
+		Set_Max_HP(100);
+		Set_Lest_HP(Get_Max_HP());
 		break;
 
 	case 3:
-		strcpy_s(m_Class, sizeof(m_Class), "도적");
+		cout << "닉네임을 입력하세요(1~9자) : ";
+		cin >> cNickName;
+
+		Set_Nick_Name(cNickName);
+		Set_Class("도적");
+
+		Set_Attack_Point(30);
+		Set_Max_HP(150);
+		Set_Lest_HP(Get_Max_HP());
 		break;
 
 	case 5:
@@ -42,6 +59,25 @@ bool CPlayer::Init_Player()
 	}
 
 	return true;
+}
+
+void CPlayer::Print_Player_Info()
+{
+	cout << "닉네임 : " << Get_Nick_Name() << endl;
+	cout << "직업 : " << Get_Class() << endl;
+	cout << "공격력 : " << Get_Attack_Point() << endl;
+	cout << "체력 : <" << Get_Lest_HP() << " / " << Get_Max_HP() << ">" << endl;
+	cout << "=============================" << endl;
+}
+
+void CPlayer::Set_Nick_Name(char * _cNickName)
+{
+	strcpy_s(m_NickName, sizeof(m_NickName), _cNickName);
+}
+
+void CPlayer::Set_Class(char * _cClass)
+{
+	strcpy_s(m_Class, sizeof(m_Class), _cClass);
 }
 
 void CPlayer::Set_Attack_Point(int _AttackPoint)
@@ -57,6 +93,16 @@ void CPlayer::Set_Max_HP(int _HP)
 void CPlayer::Set_Lest_HP(int _HP)
 {
 	m_Lest_HP = _HP;
+}
+
+const char * CPlayer::Get_Class()
+{
+	return m_Class;
+}
+
+const char * CPlayer::Get_Nick_Name()
+{
+	return m_NickName;
 }
 
 const int CPlayer::Get_Attack_Point()
