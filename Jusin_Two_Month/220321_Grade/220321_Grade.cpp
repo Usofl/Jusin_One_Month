@@ -13,6 +13,8 @@ int main()
 
 	}
 
+	school.Delete_Student();
+
     return 0;
 }
 
