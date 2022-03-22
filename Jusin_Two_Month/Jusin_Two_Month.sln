@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "220321_TextRPG", "220321_Te
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "220322", "220322\220322.vcxproj", "{9CEAC19A-41F1-4A37-B4E2-CA6AD44FA43C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "220322_TextRPG", "220322_TextRPG\220322_TextRPG.vcxproj", "{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{9CEAC19A-41F1-4A37-B4E2-CA6AD44FA43C}.Release|x64.Build.0 = Release|x64
 		{9CEAC19A-41F1-4A37-B4E2-CA6AD44FA43C}.Release|x86.ActiveCfg = Release|Win32
 		{9CEAC19A-41F1-4A37-B4E2-CA6AD44FA43C}.Release|x86.Build.0 = Release|Win32
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Debug|x64.ActiveCfg = Debug|x64
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Debug|x64.Build.0 = Debug|x64
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Debug|x86.ActiveCfg = Debug|Win32
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Debug|x86.Build.0 = Debug|Win32
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Release|x64.ActiveCfg = Release|x64
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Release|x64.Build.0 = Release|x64
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Release|x86.ActiveCfg = Release|Win32
+		{D046CD4C-FAE1-4346-81A3-5E23B83CC99E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

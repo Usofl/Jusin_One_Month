@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="00.Game">
+      <UniqueIdentifier>{d4ce300b-f4b4-4db6-bec2-2b6f9aa54bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Player">
+      <UniqueIdentifier>{3a0097ac-7d7b-47ee-ad9a-dfcede4e6823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Monster">
+      <UniqueIdentifier>{dc42e57f-0425-44c1-bfd1-ff69bf4612d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.HuntingZone">
+      <UniqueIdentifier>{4a3af28e-1ebd-4591-bd03-1e64f07d9388}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>00.Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>01.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>02.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="HuntingZone.h">
+      <Filter>03.HuntingZone</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="220322_TextRPG.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>00.Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>02.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="HuntingZone.cpp">
+      <Filter>03.HuntingZone</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>헤더 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
