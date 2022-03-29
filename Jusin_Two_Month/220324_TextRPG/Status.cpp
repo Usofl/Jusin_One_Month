@@ -1,7 +1,3 @@
-#include "..\220326_TextRPG\Status.h"
-#include "..\220326_TextRPG\Status.h"
-#include "..\220326_TextRPG\Status.h"
-#include "..\220326_TextRPG\Status.h"
 #include "stdafx.h"
 #include "Status.h"
 
@@ -35,6 +31,10 @@ void CStatus::Damage_Process(const int& _iDamage)
 void CStatus::Set_Lest_HP(const int& _iHP)
 {
 	m_iLest_HP = _iHP;
+}
+
+void CStatus::Render()
+{
 }
 
 const int& CStatus::Get_Attack_Point()
