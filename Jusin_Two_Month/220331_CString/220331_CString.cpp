@@ -27,6 +27,11 @@ int main()
 		cout << "불일치" << endl;
 	}
 
+	Str = (Str + "하지마");
+	cout << Str.Get_Str_Size() << Str << endl;
+	Str = "시도";
+	cout << Str.Get_Str_Size() << Str << endl;
+
 	if (Str3 == Str)
 	{
 		cout << "일치" << endl;

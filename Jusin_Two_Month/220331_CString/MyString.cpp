@@ -16,7 +16,10 @@ CMyString::CMyString(char * _szStr)
 
 CMyString::CMyString(CMyString & _rObj)
 {
-	Str_Cpy(_rObj.m_CStr);
+	if (this != &_rObj)
+	{
+		Str_Cpy(_rObj.m_CStr);
+	}
 }
 
 CMyString::~CMyString()
@@ -24,9 +27,19 @@ CMyString::~CMyString()
 	Release();
 }
 
-CMyString & CMyString::operator=(CMyString & rObj)
+CMyString & CMyString::operator=(CMyString & _rObj)
 {
-	this->Str_Cpy(rObj.m_CStr);
+	if (this != &_rObj)
+	{
+		this->Str_Cpy(_rObj.m_CStr);
+	}
+
+	return *this;
+}
+
+CMyString & CMyString::operator=(char * _szStr)
+{
+	this->Str_Cpy(_szStr);
 
 	return *this;
 }
@@ -66,7 +79,8 @@ const size_t & CMyString::Get_Str_Size()
 CMyString & CMyString::operator+(CMyString & rObj)
 {
 	size_t new_Size = this->m_Str_Size + rObj.m_Str_Size;
-	char* Str = new char[this->m_Str_Size + rObj.m_Str_Size + 1];
+
+	char* Str = new char[new_Size + 1];
 
 	for (unsigned int i = 0; i < m_Str_Size; ++i)
 	{
@@ -79,6 +93,28 @@ CMyString & CMyString::operator+(CMyString & rObj)
 	}
 
 	Str_Cpy(Str);
+	delete Str;
+
+	return *this;
+}
+
+CMyString & CMyString::operator+(char * _szStr)
+{
+	size_t new_Size = this->m_Str_Size + Str_Len(_szStr);
+	char* Str = new char[new_Size + 1];
+
+	for (unsigned int i = 0; i < m_Str_Size; ++i)
+	{
+		Str[i] = m_CStr[i];
+	}
+
+	for (unsigned int i = 0; i <= Str_Len(_szStr); ++i)
+	{
+		Str[m_Str_Size + i] = _szStr[i];
+	}
+
+	Str_Cpy(Str);
+
 	delete Str;
 
 	return *this;

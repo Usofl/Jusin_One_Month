@@ -9,12 +9,15 @@ public:
 	~CMyString();
 
 	CMyString& operator =(CMyString& rObj);
+	CMyString& operator =(char* _szStr);
 
 	void Str_Cpy(char* _szStr);
 	const size_t& Str_Len(char* _szStr);
 	const size_t& Get_Str_Size();
 
 	CMyString& operator +(CMyString& rObj);
+	CMyString& operator +(char* _szStr);
+
 	bool operator == (const CMyString& _rObj);
 
 	friend ostream& operator << (ostream &out, const CMyString& _rObj)
