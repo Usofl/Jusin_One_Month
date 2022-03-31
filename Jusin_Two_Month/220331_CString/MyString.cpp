@@ -122,7 +122,20 @@ CMyString & CMyString::operator+(char * _szStr)
 
 bool CMyString::operator==(const CMyString & _rObj)
 {
-	return *this->m_CStr == *_rObj.m_CStr;
+	if (m_Str_Size != _rObj.m_Str_Size)
+	{
+		return false;
+	}
+
+	for (int i = 0; i <= m_Str_Size; ++i)
+	{
+		if (m_CStr[i] != _rObj.m_CStr[i])
+		{
+			return false;
+		}
+	}
+
+	return true;
 }
 
 void CMyString::Release()

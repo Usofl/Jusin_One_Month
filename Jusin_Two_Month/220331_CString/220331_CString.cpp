@@ -13,7 +13,8 @@ int main()
 	cout << Str.Get_Str_Size() << Str << endl;
 	cout << Str2.Get_Str_Size() << Str2 + Str << endl;
 
-	CMyString Str3 = Str2;
+	CMyString Str3;
+	Str3 = Str2;
 
 	cout << Str2.Get_Str_Size() << Str2 << endl;
 	cout << Str2.Get_Str_Size() << Str3 << endl;
