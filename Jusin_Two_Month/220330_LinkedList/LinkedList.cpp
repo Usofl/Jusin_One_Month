@@ -10,6 +10,7 @@ CLinkedList::CLinkedList()
 
 CLinkedList::~CLinkedList()
 {
+	Release();
 }
 
 void CLinkedList::Render()
