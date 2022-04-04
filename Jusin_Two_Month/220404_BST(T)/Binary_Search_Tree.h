@@ -11,6 +11,7 @@ public:
 
 		if (nullptr == m_Root_node)
 		{
+			cout << "루트 : " << _data << endl;
 			m_Root_node = new_Node;
 		}
 		else
@@ -23,6 +24,7 @@ public:
 				{
 					if (nullptr == pre_Node->Get_Left_Node())
 					{
+						cout << "좌측 : " << _data << endl;
 						pre_Node->Set_Left_Node(new_Node);
 						new_Node->Set_Head_Node(pre_Node);
 						return;
@@ -36,6 +38,7 @@ public:
 				{
 					if (nullptr == pre_Node->Get_Right_Node())
 					{
+						cout << "우측 : " << _data << endl;
 						pre_Node->Set_Right_Node(new_Node);
 						new_Node->Set_Head_Node(pre_Node);
 						return;
@@ -68,13 +71,20 @@ public:
 		}
 
 		_node->Set_Head_Node(_head_node);
-		_node->Set_Left_Node(_delete_node->Get_Left_Node());
-		_node->Set_Right_Node(_delete_node->Get_Right_Node());
+		if (_delete_node->Get_Left_Node() != _node)
+		{
+			_node->Set_Left_Node(_delete_node->Get_Left_Node());
+		}
+
+		if (_delete_node->Get_Right_Node() != _node)
+		{
+			_node->Set_Right_Node(_delete_node->Get_Right_Node());
+		}
 	}
 
 	CNode<T>* search_Node_Value(const T& _value)
 	{
-		if (nullptr != m_Root_node)
+		if (!Empty())
 		{
 			CNode<T>* node = m_Root_node;
 
@@ -111,8 +121,9 @@ public:
 		CNode<T>* right_Node = delete_Node->Get_Right_Node();
 		CNode<T>* left_Node = delete_Node->Get_Left_Node();
 
-		if (nullptr != right_Node)
+		if (nullptr != right_Node && right_Node != delete_Node)
 		{
+			cout << right_Node->Get_Data() << endl;
 			while (true)
 			{
 				if (nullptr != right_Node->Get_Left_Node())
@@ -123,8 +134,16 @@ public:
 				{
 					if (nullptr != right_Node->Get_Right_Node())
 					{
-						right_Node->Get_Head_Node()->Set_Left_Node(right_Node->Get_Right_Node());
 						right_Node->Get_Right_Node()->Set_Head_Node(right_Node->Get_Head_Node());
+					}
+
+					if (right_Node == right_Node->Get_Head_Node()->Get_Right_Node())
+					{
+						right_Node->Get_Head_Node()->Set_Right_Node(right_Node->Get_Right_Node());
+					}
+					else if (right_Node == right_Node->Get_Head_Node()->Get_Left_Node())
+					{
+						right_Node->Get_Head_Node()->Set_Left_Node(right_Node->Get_Right_Node());
 					}
 
 					break;
@@ -135,7 +154,8 @@ public:
 			SAFE_DELETE(delete_Node);
 			return true;
 		}
-		else if (nullptr != left_Node)
+
+		if (nullptr != left_Node && left_Node != delete_Node)
 		{
 			while (true)
 			{
@@ -147,9 +167,18 @@ public:
 				{
 					if (nullptr != left_Node->Get_Left_Node())
 					{
-						left_Node->Get_Head_Node()->Set_Right_Node(left_Node->Get_Left_Node());
 						left_Node->Get_Left_Node()->Set_Head_Node(left_Node->Get_Head_Node());
 					}
+
+					if (left_Node == left_Node->Get_Head_Node()->Get_Right_Node())
+					{
+						left_Node->Get_Head_Node()->Set_Right_Node(left_Node->Get_Left_Node());
+					}
+					else if (left_Node == left_Node->Get_Head_Node()->Get_Left_Node())
+					{
+						left_Node->Get_Head_Node()->Set_Left_Node(left_Node->Get_Left_Node());
+					}
+
 
 					break;
 				}
@@ -176,7 +205,6 @@ public:
 					head_Node->Set_Right_Node(nullptr);
 				}
 			}
-
 			SAFE_DELETE(delete_Node);
 			return true;
 		}
@@ -204,7 +232,7 @@ public:
 
 	}
 
-	~CBinary_Search_Tree() {}
+	~CBinary_Search_Tree() { Release(); }
 
 private:
 	CNode<T>* m_Root_node;
