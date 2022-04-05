@@ -13,10 +13,7 @@ int main()
 		1.unordered map, 2.set, 3.unordered set, 4.우선순위 큐
 		map 레드블랙
 		자료구조, 시스템 프로그래밍, 알고리즘
-		이것도 이미 한 준규형 ㄷㄷ;;
 	*/
-
-	std::vector<int> v;
 
 	return 0;
 }
