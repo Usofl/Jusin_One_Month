@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="00.Game">
+      <UniqueIdentifier>{d11050b0-f17c-488b-b66a-4cc6afec0502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Feild">
+      <UniqueIdentifier>{de186979-0156-4a5d-b09e-7d9fa0a140d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.Status">
+      <UniqueIdentifier>{d81b9108-3283-4c39-98c3-40c110f63b89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.Player">
+      <UniqueIdentifier>{94104cf3-15ad-4399-9125-c75cd4bdfd90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04.Hunting">
+      <UniqueIdentifier>{ac91a9ff-bdb8-494a-b390-60ced1428f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05.Monster">
+      <UniqueIdentifier>{6f975550-bdb0-4674-9ee3-16ac4f8f59f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06.Shop">
+      <UniqueIdentifier>{64b6dde7-ed7e-48e5-8de8-7d8ce922f1cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07.Item">
+      <UniqueIdentifier>{69603d47-2584-43b8-be05-90281483f7a7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>00.Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Feild.h">
+      <Filter>01.Feild</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>02.Status</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Hunting.h">
+      <Filter>04.Hunting</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>05.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>06.Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>07.Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>07.Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Consum.h">
+      <Filter>07.Item</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="220406_TextRPG.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>00.Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Hunting.cpp">
+      <Filter>04.Hunting</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>05.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>06.Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipment.cpp">
+      <Filter>07.Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Consum.cpp">
+      <Filter>07.Item</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
