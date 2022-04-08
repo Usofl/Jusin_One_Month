@@ -15,7 +15,7 @@ public:
 	{
 
 	}
-	virtual ~CStatus() {};
+	virtual ~CStatus() {}; // 이새끼 때문에 다 갈아엎었다
 
 	virtual void Render() = 0;
 	virtual void Init_Stat(const int& _iChoice) = 0;
