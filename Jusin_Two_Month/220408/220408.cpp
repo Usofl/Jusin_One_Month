@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <map>
 
 
 int main()
@@ -17,6 +18,8 @@ int main()
 		면접에서 문자열 두개 주고 머가 앞인지 물어보면 어떻게 할까
 		abs abcs
 	*/
+	std::map<char[8], int> map;
+
     return 0;
 }
 
