@@ -2,6 +2,7 @@
 #include "AbstractFactory.h"
 #include "Obj.h"
 #include "Player.h"
+#include "Monster.h"
 
 class CMainGame
 {

@@ -19,6 +19,8 @@ void CPlayer::Initialize(void)
 	m_tInfo.dCY = 100.0;
 
 	m_dSpeed = 10.0;
+
+	m_Direction = DIRECTION_UP;
 }
 
 void CPlayer::Update(void)

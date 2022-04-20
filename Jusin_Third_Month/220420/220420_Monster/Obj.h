@@ -20,6 +20,8 @@ public:
 	inline const bool& Get_Dead() { return m_bDead; }
 	inline const void Set_Dead(const bool& _dead) { m_bDead = _dead; }
 
+	inline const RECT& Get_Rect() { return m_tRect; }
+
 protected:
 	void			Update_Rect(void);
 
