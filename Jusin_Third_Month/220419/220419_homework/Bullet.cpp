@@ -27,7 +27,7 @@ void CBullet::Update(void)
 	Move_Bullet();
 
 	Update_Rect();
-}
+} 
 
 void CBullet::Render(HDC hDC)
 {

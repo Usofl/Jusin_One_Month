@@ -6,18 +6,17 @@ CPlayer::CPlayer()
 {
 }
 
-
 CPlayer::~CPlayer()
 {
 }
 
 void CPlayer::Initialize(void)
 {
-	m_tInfo.dX = 400.0;		// 중점 X
-	m_tInfo.dY = 300.0;		// 중점 Y
+	m_tInfo.dX = 400.0;
+	m_tInfo.dY = 300.0;
 
-	m_tInfo.dCX = 100.0;	// 플레이어 가로 사이즈
-	m_tInfo.dCY = 100.0;	// 플레이어 세로 사이즈
+	m_tInfo.dCX = 100.0;
+	m_tInfo.dCY = 100.0;
 
 	m_dSpeed = 10.0;
 }
@@ -25,9 +24,12 @@ void CPlayer::Initialize(void)
 void CPlayer::Update(void)
 {
 	Key_Input();
-
-	// 위쪽에서 중점 또는 사이즈의 변화를 끝낸 다음에 Update_Rect함수를 호출
+	
 	Update_Rect();
+}
+
+void CPlayer::Late_Update(void)
+{
 }
 
 void CPlayer::Render(HDC hDC)
@@ -44,26 +46,38 @@ void CPlayer::Key_Input(void)
 
 	if (GetAsyncKeyState(VK_LEFT))
 	{
-		m_tInfo.dX -= m_dSpeed;
-		Set_Direction(Direction_Left);
+		if (m_tRect.left > GAME_SIZE)
+		{
+			m_tInfo.dX -= m_dSpeed;
+		}
+		Set_Direction(DIRECTION_LEFT);
 	}
 
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
-		m_tInfo.dX += m_dSpeed;
-		Set_Direction(Direction_Right);
+		if (m_tRect.right < WINCX - GAME_SIZE)
+		{
+			m_tInfo.dX += m_dSpeed;
+		}
+		Set_Direction(DIRECTION_RIGHT);
 	}
 
 	if (GetAsyncKeyState(VK_UP))
 	{
-		m_tInfo.dY -= m_dSpeed;
-		Set_Direction(Direction_UP);
+		if (m_tRect.top > GAME_SIZE)
+		{
+			m_tInfo.dY -= m_dSpeed;
+		}
+		Set_Direction(DIRECTION_UP);
 	}
 
 	if (GetAsyncKeyState(VK_DOWN))
 	{
-		m_tInfo.dY += m_dSpeed;
-		Set_Direction(Direction_Down);
+		if (m_tRect.bottom < WINCY - GAME_SIZE)
+		{
+			m_tInfo.dY += m_dSpeed;
+		}
+		Set_Direction(DIRECTION_DOWN);
 	}
 
 	if (GetAsyncKeyState(VK_SPACE))
