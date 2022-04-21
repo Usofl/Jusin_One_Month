@@ -81,7 +81,7 @@ void CPlayer::Key_Input(void)
 		}
 		Set_Direction(DIRECTION_DOWN);
 	}
-
+	
 	if (GetAsyncKeyState(VK_SPACE))
 	{
 		m_Bullet_List->push_back(new CBullet(*this));
