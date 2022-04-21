@@ -14,7 +14,7 @@ CMonster::~CMonster()
 
 void CMonster::Initialize(void)
 {
-	m_tInfo.dX = ((GetTickCount() % 57) + 12) * 10 ;
+	m_tInfo.dX = ((GetTickCount() % 56) + 13) * 10 ;
 	m_tInfo.dY = 150.0;
 
 	m_tInfo.dCX = 50.0;
