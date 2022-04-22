@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{149F6E84-6F33-4997-A469-D785AD8A01C8}</ProjectGuid>
+    <ProjectGuid>{9E1EF924-B094-4B6A-8F50-D9613C6444D4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My220421</RootNamespace>
+    <RootNamespace>My220422</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -145,31 +145,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="220421.h" />
-    <ClInclude Include="AbstractFactory.h" />
-    <ClInclude Include="Barrel.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="Define.h" />
-    <ClInclude Include="Enum.h" />
-    <ClInclude Include="Functor.h" />
-    <ClInclude Include="Include.h" />
-    <ClInclude Include="MainGame.h" />
-    <ClInclude Include="Monster.h" />
-    <ClInclude Include="Obj.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="220422.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="220421.cpp" />
-    <ClCompile Include="Barrel.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="Obj.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="220422.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -178,14 +160,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="220421.rc" />
+    <ResourceCompile Include="220422.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="220421.ico" />
+    <Image Include="220422.ico" />
     <Image Include="small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

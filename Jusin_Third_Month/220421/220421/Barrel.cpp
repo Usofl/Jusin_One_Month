@@ -25,8 +25,8 @@ void CBarrel::Update(void)
 {
 	Key_Input();
 
-	m_tInfo.dX = m_pPlayerInfo->dX + (m_dCos);
-	m_tInfo.dY = m_pPlayerInfo->dY + ((sqrt(((m_pPlayerInfo->dCX) * (m_pPlayerInfo->dCX)) - (m_dCos * m_dCos))) * m_dReverse);
+	m_tInfo.dX = m_pPlayerInfo->dX - (m_dCos);
+	m_tInfo.dY = m_pPlayerInfo->dY - ((sqrt(((m_pPlayerInfo->dCX) * (m_pPlayerInfo->dCX)) - (m_dCos * m_dCos))) * m_dReverse);
 }
 
 void CBarrel::Late_Update(void)
