@@ -70,7 +70,96 @@ void CPlayer::Release(void)
 
 void CPlayer::Key_Input(void)
 {
-	if (GetAsyncKeyState('W'))
+	if (GetAsyncKeyState(VK_RIGHT))
+	{
+		if (m_bChange)
+		{
+			m_Left_Leg.x += (LONG)m_fSpeed;
+
+			float fX = m_Left_Leg.x - m_tInfo.fX;
+			m_fAngle = acosf(fX / LEGSIZE);
+
+			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
+			{
+				m_bChange = false;
+			}
+
+			if (m_tInfo.fY > m_Left_Leg.y)
+			{
+				m_fAngle *= -1.f;
+			}
+
+			m_tInfo.fX = m_Right_Leg.x + LEGSIZE * cos(m_fAngle);
+			m_tInfo.fY = m_Right_Leg.y - LEGSIZE * sin(m_fAngle);
+		}
+		else
+		{
+			m_Right_Leg.x += (LONG)m_fSpeed;
+
+			float fX = m_Right_Leg.x - m_tInfo.fX;
+			m_fAngle = acosf(fX / LEGSIZE);
+
+			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
+			{
+				m_bChange = true;
+			}
+
+			if (m_tInfo.fY > m_Right_Leg.y)
+			{
+				m_fAngle *= -1.f;
+			}
+
+			m_tInfo.fX = m_Left_Leg.x + LEGSIZE * cos(m_fAngle);
+			m_tInfo.fY = m_Left_Leg.y - LEGSIZE * sin(m_fAngle);
+		}
+	}
+
+	else if (GetAsyncKeyState(VK_LEFT))
+	{
+		if (m_bChange)
+		{
+			m_Left_Leg.x -= (LONG)m_fSpeed;
+
+			float fX = m_Left_Leg.x - m_tInfo.fX;
+			m_fAngle = acosf(fX / LEGSIZE);
+
+			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
+			{
+				m_bChange = false;
+			}
+
+			if (m_tInfo.fY > m_Left_Leg.y)
+			{
+				m_fAngle *= -1.f;
+			}
+
+			m_tInfo.fX = m_Right_Leg.x + LEGSIZE * cos(m_fAngle);
+			m_tInfo.fY = m_Right_Leg.y - LEGSIZE * sin(m_fAngle);
+		}
+		else
+		{
+			m_Right_Leg.x -= (LONG)m_fSpeed;
+
+			float fX = m_Right_Leg.x - m_tInfo.fX;
+			m_fAngle = acosf(fX / LEGSIZE);
+
+			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
+			{
+				m_bChange = true;
+			}
+
+			if (m_tInfo.fY > m_Right_Leg.y)
+			{
+				m_fAngle *= -1.f;
+			}
+
+			m_tInfo.fX = m_Left_Leg.x + LEGSIZE * cos(m_fAngle);
+			m_tInfo.fY = m_Left_Leg.y - LEGSIZE * sin(m_fAngle);
+		}
+
+	}
+
+	/*if (GetAsyncKeyState('W'))
 	{
 		if (LEGSIZE * 1.9 > fabs(m_Right_Leg.x - m_Left_Leg.x) || m_Left_Leg.x < m_Right_Leg.x)
 		{
@@ -141,5 +230,5 @@ void CPlayer::Key_Input(void)
 			m_tInfo.fX = m_Left_Leg.x + LEGSIZE * cos(m_fAngle);
 			m_tInfo.fY = m_Left_Leg.y - LEGSIZE * sin(m_fAngle);
 		}
-	}
+	}*/
 }

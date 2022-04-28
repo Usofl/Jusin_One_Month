@@ -18,6 +18,7 @@ private:
 	void Key_Input(void);
 
 private:
+	bool m_bChange;
 	POINT m_Left_Leg;
 	POINT m_Right_Leg;
 };
