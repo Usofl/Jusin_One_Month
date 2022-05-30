@@ -14,6 +14,8 @@
 #define DEGREE (PI / 180.f)
 #define nLog sqrtf(2.f)
 
+#define GRAVITY 9.80665f
+
 #define Diagonal(x,y) sqrtf((x * x) + (y * y))
 
 #define ACOSF(x,y) acosf(x / sqrtf((x * x) + (y * y)))

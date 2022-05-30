@@ -23,7 +23,13 @@ void CMainGame::Initialize(void)
 
 void CMainGame::Update(void)
 {
-
+	for (auto& List_iter : m_Objlist)
+	{
+		for (auto iter = List_iter.begin(); iter != List_iter.end(); ++iter)
+		{
+			(*iter)->Update();
+		}
+	}
 }
 
 void CMainGame::Late_Update(void)
@@ -32,7 +38,7 @@ void CMainGame::Late_Update(void)
 	{
 		for (auto iter = List_iter.begin(); iter != List_iter.end(); ++iter)
 		{
-			(*iter)->Update();
+			(*iter)->Late_Update();
 		}
 	}
 }

@@ -19,6 +19,11 @@ private:
 
 private:
 	bool m_bChange;
+	bool m_bJump;
+	float m_fTime;
+	float m_fJumpAngle;
+	float m_fJumpY;
+
 	POINT m_Left_Leg;
 	POINT m_Right_Leg;
 };

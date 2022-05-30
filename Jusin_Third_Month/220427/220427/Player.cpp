@@ -5,6 +5,9 @@
 CPlayer::CPlayer()
 	: m_Left_Leg({ 0,0 })
 	, m_Right_Leg({ 0,0 })
+	, m_bJump(false)
+	, m_fTime(1.f)
+	, m_fJumpAngle(45.f)
 {
 }
 
@@ -37,11 +40,33 @@ void CPlayer::Update(void)
 {
 	Key_Input();
 
+	if (m_bJump)
+	{
+		//v t sin() - 1/2 G t2
+		m_fTime += 0.08f;
+
+		float fy = m_fJumpY - m_fSpeed * m_fTime * sinf(m_fJumpAngle * DEGREE) + (0.5f * GRAVITY * (m_fTime * m_fTime));
+		float fx = m_fSpeed * cosf(m_fJumpAngle * DEGREE);
+		
+		m_tInfo.fX += fx;
+		m_Left_Leg.x += (LONG)fx;
+		m_Right_Leg.x += (LONG)fx;
+
+		m_tInfo.fY = fy;
+		m_Left_Leg.y = (LONG)fy;
+		m_Right_Leg.y = (LONG)fy;
+	}
+
 	Update_Rect();
 }
 
 void CPlayer::Late_Update(void)
 {
+	if (m_Left_Leg.y > (WINCY - GAMESIZE))
+	{
+		m_fTime = 0.f;
+		m_bJump = false;
+	}
 }
 
 void CPlayer::Render(HDC _hDC)
@@ -79,7 +104,7 @@ void CPlayer::Key_Input(void)
 			float fX = m_Left_Leg.x - m_tInfo.fX;
 			m_fAngle = acosf(fX / LEGSIZE);
 
-			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
+			if (m_tInfo.fCX * 0.5f - 10.f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
 			{
 				m_bChange = false;
 			}
@@ -99,7 +124,7 @@ void CPlayer::Key_Input(void)
 			float fX = m_Right_Leg.x - m_tInfo.fX;
 			m_fAngle = acosf(fX / LEGSIZE);
 
-			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
+			if (m_tInfo.fCX * 0.5f - 10.f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
 			{
 				m_bChange = true;
 			}
@@ -123,7 +148,7 @@ void CPlayer::Key_Input(void)
 			float fX = m_Left_Leg.x - m_tInfo.fX;
 			m_fAngle = acosf(fX / LEGSIZE);
 
-			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
+			if (m_tInfo.fCX * 0.5f - 10.f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x < m_Right_Leg.x)
 			{
 				m_bChange = false;
 			}
@@ -143,7 +168,7 @@ void CPlayer::Key_Input(void)
 			float fX = m_Right_Leg.x - m_tInfo.fX;
 			m_fAngle = acosf(fX / LEGSIZE);
 
-			if (m_tInfo.fCX * 0.5f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
+			if (m_tInfo.fCX * 0.5f - 10.f <= fabs(m_Left_Leg.x - m_Right_Leg.x) && m_Left_Leg.x > m_Right_Leg.x)
 			{
 				m_bChange = true;
 			}
@@ -157,6 +182,12 @@ void CPlayer::Key_Input(void)
 			m_tInfo.fY = m_Left_Leg.y - LEGSIZE * sin(m_fAngle);
 		}
 
+	}
+
+	if (GetAsyncKeyState(VK_SPACE))
+	{
+		m_fJumpY = m_tInfo.fY;
+		m_bJump = true;
 	}
 
 	/*if (GetAsyncKeyState('W'))
