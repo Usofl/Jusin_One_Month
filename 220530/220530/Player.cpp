@@ -16,9 +16,9 @@ void CPlayer::Initialize(void)
 	m_tInfo.vDir = { 1.f, 0.f, 0.f };
 
 	m_vRectPoint[0] = { - 50.f, - 50.f, 0.f };
-	m_vRectPoint[1] = { - 50.f, 50.f, 0.f };
+	m_vRectPoint[1] = { 50.f, -50.f, 0.f };
 	m_vRectPoint[2] = { 50.f, 50.f, 0.f };
-	m_vRectPoint[3] = { 50.f, - 50.f, 0.f };
+	m_vRectPoint[3] = { - 50.f, 50.f, 0.f };
 
 	m_fAngle = 90.f;
 	m_fPosinAngle = m_fAngle;
