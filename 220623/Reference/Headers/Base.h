@@ -1,0 +1,22 @@
+#pragma once
+#pragma once
+
+#include "Engine_Defines.h"
+
+class ENGINE_DLL CBase abstract
+{
+protected:
+	CBase();
+	virtual ~CBase() = default;
+
+public:
+	unsigned long AddRef();
+	unsigned long Release();
+
+protected:
+	unsigned long m_dwRefCnt;
+
+public:
+	virtual void Free() = 0;
+};
+
